@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const blogPostController = require("../controllers/blog-post");
+const blogPostController = require("../../controllers/blog-post")
 
 router.get("/", blogPostController.getAllBlogPosts);
 router.post("/", blogPostController.addBlogPost);
