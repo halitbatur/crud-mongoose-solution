@@ -15,7 +15,7 @@ services:
       - ./dbseed.gz:/dbseed.gz
       - ./dbseed.sh:/docker-entrypoint-initdb.d/mongorestore.sh
   mongodb-test:
-    container_name: mongodb-test
+    container_name: mongodb-crud-with-mongoose-test
     restart: unless-stopped
     env_file: ./.env
     logging:
@@ -43,7 +43,7 @@ services:
       - $NODE_LOCAL_PORT:$NODE_DOCKER_PORT
     environment:
       - DB_HOST=mongodb
-      - TEST_DB_HOST=mongodb-test
+      - TEST_DB_HOST=mongodb-crud-with-mongoose-test
       - DB_USER=$MONGODB_USER
       - DB_PASSWORD=$MONGODB_PASSWORD
       - DB_NAME=$MONGODB_DATABASE
