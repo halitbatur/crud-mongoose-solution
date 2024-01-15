@@ -7,16 +7,30 @@
 ## Overview
 We will continue building the CRUD operations for our blog site. Previously, we learned how to set up our _models_ using Mongoose. Now it is time to interact with our database and manipulate the data using _controllers_ that interact with the _model_.
 
+## Working with docker
+
+This app is bootstraped with docker and docker-compose. It containerize the server, as well as the database.
+
+### To start the server
+
+run the command `yarn && yarn start`. This will install all the dependencies and build the docker image
+
+### To install packages
+
+when you run `yarn add PACKAGE` the package will be installed in docker as well automatically. However if you run into issues, you need to stop the server first with `yarn stop` then you can run `yarn build` to rebuild the docker image and start again.
+
+### To prune the containers and data
+
+> ⚠️ WARNING: This is a destructuve command that would delete the containers and all the data inside like database data, and uploads
+> you can run `yarn prune` to shutdown the server and delete all the volumes associated with it. This serves as a start fresh command, that will return your server environment to original. It will not affect your code changes though.
+
+
 ## Starter Code
 In this assignment folder, you will find:
 1. Express server setup in `/index.js` with 2 separate routers, one for blogpost API routes and one for author API routes.
 2. The database connection is setup in `db/connection.js`
 3. The routes are configured and connected to a controller inside the `routes` folder.
 4. The initial version of the data model is created in `models/blog-post.js`. We are using the embedded approach with author embedded inside blog post.
-
-All the necessary packages are already listed in package.json. So just run `npm install` and `npm start` to get started.
-
-Note: Make sure MongoDB is running on your local machine.
 
 ## Instructions
 You have to write each of the controller functions inside the `controllers` folder to ensure the blog site server handles the following types of requests.
