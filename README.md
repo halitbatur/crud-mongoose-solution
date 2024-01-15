@@ -86,7 +86,7 @@ A PUT request to `/api/authors/AUTHOR_NAME` with the author details to be change
 - All API routes performing a find operation must handle the case of not found with status code 422 and appropriate error message.
 
 ## Submission
-Run `npm test` to test your code. If it shows all tests have passed then you're good to go.
+Run `yarn test` to test your code. If it shows all tests have passed then you're good to go.
 
 You can also manually test your application by verifying the database operations using any MongoDB GUI tool or Mongo shell.
 
